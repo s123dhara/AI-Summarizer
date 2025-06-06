@@ -138,12 +138,6 @@ export default function SamarizeLanding() {
                                 Get Started
                             </Link>
                         </button>
-                        <div>
-                            <button
-                                className='toast-button bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-full text-white font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25'
-                                onClick={() => toast.error('Success!')}>Show Toast</button>
-                            
-                        </div>
                     </div>
 
                     <button
@@ -202,11 +196,16 @@ export default function SamarizeLanding() {
                             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
 
-                        <button className="group flex items-center space-x-2 text-gray-300 hover:text-white transition-all duration-300 px-8 py-4 hover:scale-105">
+                        <button
+                            className="group flex items-center space-x-2 text-gray-300 hover:text-white transition-all duration-300 px-8 py-4 hover:scale-105"
+                            onClick={() => toast.error('Oops! This feature is not available yet. Please check back soon.')}
+                        >
                             <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:rotate-12">
                                 <Play className="w-5 h-5 ml-1" />
                             </div>
-                            <span className="font-medium">Watch Demo</span>
+                            <span className="font-medium">
+                                Watch Demo
+                            </span>
                         </button>
                     </div>
 
@@ -228,17 +227,17 @@ export default function SamarizeLanding() {
                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
                         <ArrowDown className="w-6 h-6 text-gray-400" />
                     </div>
-                </div>
+                </div >
 
                 {/* Animated Background Elements */}
-                <div className="absolute inset-0 overflow-hidden">
+                < div className="absolute inset-0 overflow-hidden" >
                     <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
                     <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                </div>
-            </section>
+                </div >
+            </section >
 
             {/* Features Section */}
-            <section
+            < section
                 ref={featuresRef}
                 id="features"
                 className="px-6 py-20"
@@ -313,10 +312,10 @@ export default function SamarizeLanding() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Testimonials */}
-            <section
+            < section
                 ref={testimonialsRef}
                 id="testimonials"
                 className="px-6 py-20"
@@ -358,10 +357,10 @@ export default function SamarizeLanding() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* CTA Section */}
-            <section
+            < section
                 ref={ctaRef}
                 id="cta"
                 className="px-6 py-20"
@@ -376,10 +375,14 @@ export default function SamarizeLanding() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-full text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/30">
+                            <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-full text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/30"
+                                onClick={() => toast.warning('Oops! This feature is not available yet. Please check back soon.')}
+                            >
                                 Start Free Trial
                             </button>
-                            <button className="border border-slate-600 px-8 py-4 rounded-full text-white font-semibold hover:bg-slate-800 hover:border-purple-500/50 transition-all duration-300 hover:scale-105">
+                            <button className="border border-slate-600 px-8 py-4 rounded-full text-white font-semibold hover:bg-slate-800 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                                onClick={() => toast.warning('Oops! This feature is not available yet. Please check back soon.')}
+                            >
                                 Schedule Demo
                             </button>
                         </div>
@@ -389,10 +392,10 @@ export default function SamarizeLanding() {
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Footer */}
-            <footer className="px-6 py-12 border-t border-slate-700">
+            < footer className="px-6 py-12 border-t border-slate-700" >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="flex items-center space-x-2 mb-4 md:mb-0 group hover:scale-105 transition-transform duration-300">
@@ -413,7 +416,7 @@ export default function SamarizeLanding() {
                         © 2025 Samarize.ai. All rights reserved.
                     </div>
                 </div>
-            </footer>
+            </footer >
 
             <style>
                 {`
@@ -430,6 +433,6 @@ export default function SamarizeLanding() {
                 `}
             </style>
 
-        </div>
+        </div >
     );
 }

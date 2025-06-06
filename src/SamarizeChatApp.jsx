@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
     Send,
     Paperclip,
@@ -170,6 +171,14 @@ export default function SamarizeChatApp() {
                         <Zap className="w-4 h-4 text-white" />
                     </div>
                 )}
+
+                <Helmet>
+                    <title>Samarize.ai</title>
+                    <meta name="description" content="Welcome to MySite, best of Analyst, Summerize" />
+                    <meta property="og:title" content="AI Summerize" />
+                    <meta property="og:description" content="Explore the best of Analyst, Summerize on MySite." />
+                    <meta property="og:type" content="website" />
+                </Helmet>
 
                 <div className={`max-w-[70%] ${isUser ? 'order-1' : 'order-2'}`}>
                     <div className={`p-4 rounded-2xl ${isUser
