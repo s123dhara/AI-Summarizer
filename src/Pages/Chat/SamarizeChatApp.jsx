@@ -1,31 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import {
-    Send,
-    Paperclip,
-    Plus,
-    MessageSquare,
-    FileText,
-    Image,
-    Download,
-    Copy,
-    ThumbsUp,
-    ThumbsDown,
-    Zap,
-    Menu,
-    X,
-    Search,
-    Settings,
-    User,
-    Trash2,
-    Edit3,
-    MoreVertical,
-    ChevronDown,
-    Sparkles,
-    Clock,
-    CheckCircle
+    Send, Paperclip, Plus, MessageSquare, FileText, Image, Download, Copy, ThumbsUp, ThumbsDown, Zap, Menu, X, Search, Settings, User,
+    Trash2, Edit3, MoreVertical, ChevronDown, Sparkles, Clock, CheckCircle
 } from 'lucide-react';
+
+// UI 
+import PageMeta from '../../components/UI/PageMeta';
 
 export default function SamarizeChatApp() {
     const [messages, setMessages] = useState([
@@ -128,6 +108,11 @@ export default function SamarizeChatApp() {
         setMessages(prev => [...prev, fileMessage]);
     };
 
+    const handleDeleteFile = (id) => {
+        setUploadedFiles(prev => prev.filter(file => file.id !== id));
+    };
+
+
     const handleDrag = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -171,14 +156,6 @@ export default function SamarizeChatApp() {
                         <Zap className="w-4 h-4 text-white" />
                     </div>
                 )}
-
-                <Helmet>
-                    <title>Samarize.ai</title>
-                    <meta name="description" content="Welcome to MySite, best of Analyst, Summerize" />
-                    <meta property="og:title" content="AI Summerize" />
-                    <meta property="og:description" content="Explore the best of Analyst, Summerize on MySite." />
-                    <meta property="og:type" content="website" />
-                </Helmet>
 
                 <div className={`max-w-[70%] ${isUser ? 'order-1' : 'order-2'}`}>
                     <div className={`p-4 rounded-2xl ${isUser
@@ -232,6 +209,7 @@ export default function SamarizeChatApp() {
 
     return (
         <div className="h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex overflow-hidden">
+            <PageMeta />
             {/* Sidebar */}
             <div className={`bg-slate-800/90 backdrop-blur-xl border-r border-slate-700 transition-all duration-300 ${isSidebarOpen ? 'w-80' : 'w-0'
                 } overflow-hidden flex flex-col`}>
@@ -405,7 +383,10 @@ export default function SamarizeChatApp() {
                                             {getFileIcon(file.type)}
                                             <span className="text-sm text-gray-300 flex-1">{file.name}</span>
                                             <span className="text-xs text-gray-500">{formatFileSize(file.size)}</span>
-                                            <button className="text-gray-400 hover:text-red-400 transition-colors">
+                                            <button 
+                                                className="text-gray-400 hover:text-red-400 transition-colors"
+                                                onClick={() => handleDeleteFile(file.id)}
+                                            >
                                                 <Trash2 className="w-4 h-4" />
                                             </button>
                                         </div>

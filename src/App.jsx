@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import SamarizeLanding from './SamarizeLanding'
-import SamarizeChatApp from './SamarizeChatApp'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Pages
+import SamarizeLanding from './Pages/Landing/SamarizeLanding'
+import SamarizeChatApp from './Pages/Chat/SamarizeChatApp'
 
+const App = () => {
   return (
     <Router>
       <Routes>

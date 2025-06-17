@@ -63,4 +63,4 @@ yarn build
 
 ### Optional Additions:
 - Add a **Demo GIF** under `## 📌 Description`:
-![alt text](image.png)
+![alt text](Screenshots/image.png)
