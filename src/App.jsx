@@ -10,7 +10,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SamarizeLanding />} />
+
+        <Route path="/" element={ <SamarizeLanding /> } />
         <Route path="/generate" element={<SamarizeChatApp />} />
       </Routes>
     </Router>
